@@ -18,12 +18,12 @@ public class SetExamples {
         int givenNumber = sc.nextInt();
         HashSet<Integer> integers1s = new HashSet<>();
         for(Integer integer : integers){
-            if(integer < givenNumber){
+            if(integer > givenNumber){
                 integers1s.add(integer);
             }
         }
         if(!integers1s.isEmpty()){
             System.out.println("Given number " + integers1s);
-        }else System.out.println("No numbers are less than the giving number");
+        }else System.out.println("No numbers are greater than the giving number");
     }
 }
