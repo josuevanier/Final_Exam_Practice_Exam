@@ -77,7 +77,7 @@ public class LinkedListADT<Type>{
             for(int i = 1; i < index - 1; i++){
                 t = t.getNext(); // has access to the next reference, a curent pointer
             }
-            n.setNext(t.getNext());
+            n.setNext(t.getNext());     // because at the  for the specific value what happen to your other value they need to connet with another
             t.setNext(n);
             size++;
         }
