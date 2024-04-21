@@ -16,24 +16,14 @@ public class SetExamples {
         integer2s.add(5);
         integer2s.add(6);
 
-        hashEquals(integer1s, integer2s);
+        if(integer1s.equals(integer2s)){
+            System.out.println("Hashset are equals");
+        }else {
+            Set<Integer> commonElements = new HashSet<>(integer1s);
 
-
-    }
-    public static  void hashEquals (Set<Integer> integers, Set<Integer> integer2s){
-        if(integers.equals(integer2s)) System.out.println("Hash set are equals");
-        else {
-            HashSet<Integer> notCommonElements = new HashSet<>();
-            notCommonElements.addAll(integers);
-            for(Integer integer : integer2s){
-
-                if(notCommonElements.contains(integer)){
-                    notCommonElements.remove(integer);
-                }else{
-                    notCommonElements.add(integer);
-                }
-            }
-            System.out.println("Elements" + notCommonElements);
+            commonElements.retainAll(integer2s);
+            System.out.println(commonElements);
         }
+
     }
 }
