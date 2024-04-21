@@ -105,9 +105,21 @@ public class LinkedListADT<Type>{
             size--;
         }
     }
-    public void deleteAtGivenPostion(int pos){
-        if(isLinkEmpty()) System.out.println("Link is emtpy");
+    public void deleteAtGivenPosition(int pos){
+        if(isLinkEmpty()) System.out.println("Link is empty");
         else if (pos == 1) deleteNodeAtFirst();
         else if (pos == size) deleteNodeAtLast();
+        else {
+            Node<Type> t, t1;
+            t = head;
+            for(int i = 1; i < pos - 1; i++){
+                t = t.getNext();
+            }
+            t1 = t.getNext();
+
+            t.setNext(t1);
+            size--;
+        }
     }
+
 }
