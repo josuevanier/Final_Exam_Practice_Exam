@@ -35,7 +35,12 @@ public class MakingMyIterableClass <T>  implements Iterable<T>{
         // Optionally, implement the remove() method (if supported)
         @Override
         public void remove() {
-            throw new UnsupportedOperationException("remove() method is not supported");
+            if (currentIndex <= 0) {
+                throw new IllegalStateException("next() has not been called, or remove() has already been called after the last call to next()");
+            }
+            // Perform the removal operation here
+            // Example: elements[currentIndex - 1] = null;
+            currentIndex--; // Adjust the index after removal
         }
     }
 
