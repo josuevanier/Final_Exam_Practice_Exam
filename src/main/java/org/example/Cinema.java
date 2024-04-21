@@ -53,9 +53,9 @@ public class Cinema {
     public static void main(String[] args) {
         LinkedHashSet<Cinema> cinemas = new LinkedHashSet<>();
 
-        cinemas.add(new Cinema("Action", 2.4,1000.5,"Joseph","2023"));
-        cinemas.add(new Cinema("Comedy", 2.4,1000.4,"Tosue","2024"));
-        cinemas.add(new Cinema("Dra,", 2.4,1000.6,"Jos","2025"));
+        cinemas.add(new Cinema("Action", 2.4,1000.1,"Joseph","2023"));
+        cinemas.add(new Cinema("Comedy", 2.4,1000.2,"Tosue","2024"));
+        cinemas.add(new Cinema("Dra,", 2.4,1000.3,"Jos","2025"));
 
       cinemas.stream().sorted(Comparator.comparing(Cinema:: getGenre)).forEach(System.out::print);
 
@@ -66,5 +66,9 @@ public class Cinema {
         String directorName = cinemas.stream().max(Comparator.comparing(Cinema::getRevenue)).map(Cinema::getDirector).orElse(null);
 
         System.out.println(directorName);
+
+        double totalRevenue = cinemas.stream().mapToDouble(Cinema::getRevenue).sum();
+
+        System.out.println(totalRevenue);
     }
 }
