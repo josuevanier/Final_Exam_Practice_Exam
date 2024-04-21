@@ -81,4 +81,11 @@ public class LinkedListADT<Type>{
             size++;
         }
     }
+    public void deleteNodeAtFirst(){
+        if(isLinkEmpty()) System.out.println("List is empty");
+        else {
+            head = head.getNext(); // we getting the next element so if the current head = head.getnext then we cut off the linked
+            size--;
+        }
+    }
 }
