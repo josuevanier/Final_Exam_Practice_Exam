@@ -47,41 +47,42 @@ class Employee implements Comparable<Employee>{
         return  this.lastName.compareTo(o.getFirstName());
     }
 
-    static class SortingByAge implements Comparator<Employee>{
+    //static class SortingByAge implements Comparator<Employee>{
 
 
-        @Override
-        public int compare(Employee o1, Employee o2) {
+       // @Override
+        //public int compare(Employee o1, Employee o2) {
 
-            if(o1.getAge() > o2.getAge()) return 1;
-            else if (o1.getAge() == o2.getAge()) return 0;
-            else return  -1;
-        }
+            //if(o1.getAge() > o2.getAge()) return 1;
+            //else if (o1.getAge() == o2.getAge()) return 0;
+           // else return  -1;
+        //}
 
     }
-    static class SortingByName implements  Comparator<Employee>{
+    //static class SortingByName implements  Comparator<Employee>{
 
-        @Override
-        public int compare(Employee o1, Employee o2) {
-            return Integer.compare(o1.age, o2.getAge());
-        }
-    }
-}
+      //  @Override
+        //public int compare(Employee o1, Employee o2) {
+        //    return Integer.compare(o1.age, o2.getAge());
+       // }
+    //}
+
 
 public class PriorityQueueEx {
     public static void main(String[] args) {
 
         PriorityQueue<Employee> employees = new PriorityQueue<>();
 
-        employees.add(new Employee("DDO1",14,"A","F"));
-        employees.add(new Employee("DDO2",15,"B","F"));
-        employees.add(new Employee("DDO3",16,"D","F"));
+        employees.add(new Employee("DDO1",14,"A","A"));
+        employees.add(new Employee("DDO2",15,"c","B"));
+        employees.add(new Employee("DDO3",16,"D","C"));
 
-        PriorityQueue<Employee> sortedByAge = new PriorityQueue<>(new Employee.SortingByAge());
-         sortedByAge.addAll(employees);
+
+        PriorityQueue<Employee> sortedByAge = new PriorityQueue<>(Comparator.comparing(Employee::getAge));
+
+        sortedByAge.addAll(employees);
+
         System.out.println(sortedByAge);
-
-
 
     }
 }
