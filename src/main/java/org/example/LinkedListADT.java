@@ -50,25 +50,26 @@ public class LinkedListADT<Type>{
     }
     public void insetAtLast(Type value){
         Node<Type>  n,t;
+
         n = new Node<>();
         n.setElement(value);
-        t = head;
+
         if(head == null){
             head = n;
         }else {
-            t = new Node<>();
+            t = head;
             while (t.getNext() != null) {
                 t = t.getNext();
+
             }
             t.setNext(n);
         }
         size++;
     }
     public void insertMiddleOrPosition(int index, Type value){
-        if(index > size && index < 0) System.out.println("Invalid index");
-        if(index == 0) insetFirstElement(value);
-        else if(index == size) insetAtLast(value);
-        else {
+        if(index == 1) insetFirstElement(value);
+        else if(index == size + 1) insetAtLast(value);
+        else if (index > 1 && index <= size) {
             Node<Type> n,t;
             n = new Node<>(value,null); // to hold the value, no reference yet
             t = this.head; // traversing the list
@@ -122,4 +123,40 @@ public class LinkedListADT<Type>{
         }
     }
 
+    public void searchItem(Type key){
+        int position = 1;
+        Node<Type> t = head;
+        if(isLinkEmpty()) System.out.println("Link is empty");
+        while(t != null){
+            if(t.getElement() == key){
+                System.out.println(key + " is found at " + position);
+            }else {
+                t = t.getNext();
+                position++;
+            }
+        }
+    }
+    public void viewElement() {
+        Node<Type> t = head;
+        if (isLinkEmpty()) {
+            System.out.println("Link is empty");
+
+        }else {
+            System.out.print("Elements are: ");
+            while (t != null) {
+                System.out.print(t.getElement() + " ");
+                t = t.getNext();
+
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        LinkedListADT<Integer> integers = new LinkedListADT<>();
+       // integers.insetFirstElement(1);
+        integers.insetFirstElement(2);
+        integers.insetAtLast(5);
+
+        integers.viewElement();
+    }
 }
