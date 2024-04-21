@@ -65,9 +65,9 @@ public class LinkedListADT<Type>{
         size++;
     }
     public void insertMiddleOrPosition(int index, Type value){
-        if(index >= size && index < 0) System.out.println("Invalid index");
+        if(index > size && index < 0) System.out.println("Invalid index");
         if(index == 0) insetFirstElement(value);
-        else if(index == size - 1) insetAtLast(value);
+        else if(index == size) insetAtLast(value);
         else {
             Node<Type> n,t;
             n = new Node<>(value,null); // to hold the value, no reference yet
@@ -104,5 +104,10 @@ public class LinkedListADT<Type>{
             t.setNext(null);
             size--;
         }
+    }
+    public void deleteAtGivenPostion(int pos){
+        if(isLinkEmpty()) System.out.println("Link is emtpy");
+        else if (pos == 1) deleteNodeAtFirst();
+        else if (pos == size) deleteNodeAtLast();
     }
 }
