@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Set;
+import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -12,12 +13,18 @@ public class TreeMapQuestions {
         treeMap.put(2,"two");
         treeMap.put(3,"tree");
         treeMap.put(4,"four");
+        treeMap.put(5,"four");
 
-        int leastKey = treeMap.firstKey();
+        int givenKey = 3;
 
-        int greatestKey = treeMap.lastKey();
+        SortedMap<Integer, String> keylessthanGivenKey = treeMap.headMap(3); // head map is excluded
 
-        System.out.println("Greateast key is "  + greatestKey + " " + "least key is " + leastKey);
+        System.out.println(keylessthanGivenKey);
+
+        SortedMap<Integer, String > keyvalueGreaterThanGivenKey = treeMap.tailMap(3 + 1); //tailmap is included
+
+        System.out.println(keyvalueGreaterThanGivenKey);
+
     }
 
 }
