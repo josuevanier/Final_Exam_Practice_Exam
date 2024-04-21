@@ -144,7 +144,7 @@ public class LinkedListADT<Type>{
         }else {
             System.out.print("Elements are: ");
             while (t != null) {
-                System.out.print(t.getElement() + " ");
+                System.out.print(t.getElement() + "--> ");
                 t = t.getNext();
 
             }
