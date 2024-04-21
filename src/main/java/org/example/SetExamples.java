@@ -1,29 +1,29 @@
 package org.example;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SetExamples {
     public static void main(String[] args) {
-        Set<Integer> integer1s = new HashSet<>();
-         integer1s.add(1);
-         integer1s.add(2);
-         integer1s.add(3);
+        Scanner sc = new Scanner(System.in);
+        Set<Integer> integers = new TreeSet<>();
+        integers.add(1);
+        integers.add(2);
+        integers.add(3);
+        integers.add(78);
 
-        Set<Integer> integer2s = new HashSet<>();
-        integer2s.add(1);
-        integer2s.add(3);
-        integer2s.add(5);
-        integer2s.add(6);
-
-        if(integer1s.equals(integer2s)){
-            System.out.println("Hashset are equals");
-        }else {
-            Set<Integer> commonElements = new HashSet<>(integer1s);
-
-            commonElements.retainAll(integer2s);
-            System.out.println(commonElements);
+        System.out.println("Enter a number ");
+        int givenNumber = sc.nextInt();
+        HashSet<Integer> integers1s = new HashSet<>();
+        for(Integer integer : integers){
+            if(integer < givenNumber){
+                integers1s.add(integer);
+            }
         }
-
+        if(!integers1s.isEmpty()){
+            System.out.println("Given number " + integers1s);
+        }else System.out.println("No numbers are less than the giving number");
     }
 }
