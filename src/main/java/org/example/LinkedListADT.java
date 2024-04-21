@@ -77,7 +77,7 @@ public class LinkedListADT<Type>{
             for(int i = 1; i < index - 1; i++){
                 t = t.getNext(); // has access to the next reference, a curent pointer
             }
-            n.setNext(t);
+            n.setNext(t.getNext());
             t.setNext(n);
             size++;
         }
@@ -156,7 +156,10 @@ public class LinkedListADT<Type>{
        // integers.insetFirstElement(1);
         integers.insetFirstElement(2);
         integers.insetAtLast(5);
-
+        integers.insetAtLast(6);
+        integers.viewElement();
+        integers.insertMiddleOrPosition(2,5);
+        System.out.println();
         integers.viewElement();
     }
 }
