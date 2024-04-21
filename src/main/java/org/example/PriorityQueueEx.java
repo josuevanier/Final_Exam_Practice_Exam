@@ -44,7 +44,7 @@ class Employee implements Comparable<Employee>{
 
     @Override
     public int compareTo(Employee o) {
-        return  this.lastName.compareTo(o.getFirstName());
+        return  this.firstName.compareTo(o.getFirstName());
     }
 
     //static class SortingByAge implements Comparator<Employee>{
@@ -73,16 +73,10 @@ public class PriorityQueueEx {
 
         PriorityQueue<Employee> employees = new PriorityQueue<>();
 
-        employees.add(new Employee("DDO1",14,"A","A"));
-        employees.add(new Employee("DDO2",15,"c","B"));
-        employees.add(new Employee("DDO3",16,"D","C"));
+        employees.add(new Employee("DDO1",20,"A","A"));
+        employees.add(new Employee("DDO2",87,"B","B"));
+        employees.add(new Employee("DDO3",26,"C","C"));
 
-
-        PriorityQueue<Employee> sortedByAge = new PriorityQueue<>(Comparator.comparing(Employee::getAge));
-
-        sortedByAge.addAll(employees);
-
-        System.out.println(sortedByAge);
 
     }
 }
