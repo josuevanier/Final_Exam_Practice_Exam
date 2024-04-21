@@ -73,7 +73,7 @@ public class LinkedListADT<Type>{
             n = new Node<>(value,null); // to hold the value, no reference yet
             t = this.head; // traversing the list
 
-            for(int i = 0; i < index; i++){
+            for(int i = 1; i < index - 1; i++){
                 t = t.getNext(); // has access to the next reference, a curent pointer
             }
             n.setNext(t);
@@ -85,6 +85,23 @@ public class LinkedListADT<Type>{
         if(isLinkEmpty()) System.out.println("List is empty");
         else {
             head = head.getNext(); // we getting the next element so if the current head = head.getnext then we cut off the linked
+            size--;
+        }
+    }
+
+    public void deleteNodeAtLast(){
+        if(isLinkEmpty()) System.out.println("Linked is emtpy");
+        else if(size == 1) {
+            head = null;
+            size--;
+        }else {
+            Node<Type> t;
+
+            t = head;
+            for(int i = 1; i < size - 1; i++){
+                 t =t.getNext();
+            }
+            t.setNext(null);
             size--;
         }
     }
