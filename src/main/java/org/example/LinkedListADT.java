@@ -46,5 +46,6 @@ public class LinkedListADT<Type>{
     public void insetFirstElement(Type value){
         Node<Type> newNode = new Node(value, this.head);
         head = newNode;
+        size++;
     }
 }
