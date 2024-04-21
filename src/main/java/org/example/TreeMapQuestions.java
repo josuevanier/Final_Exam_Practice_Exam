@@ -13,9 +13,10 @@ public class TreeMapQuestions {
         treeMap.put(3,"tree");
         treeMap.put(4,"four");
 
-        Set<Integer> keys = treeMap.keySet();
+        TreeMap<Integer, String > targetMap = new TreeMap<>();
+        targetMap.putAll(treeMap);
 
-        System.out.println(keys);
+        System.out.println(targetMap);
     }
 
 }
