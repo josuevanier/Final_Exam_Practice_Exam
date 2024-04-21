@@ -13,10 +13,11 @@ public class TreeMapQuestions {
         treeMap.put(3,"tree");
         treeMap.put(4,"four");
 
-        TreeMap<Integer, String > targetMap = new TreeMap<>();
-        targetMap.putAll(treeMap);
+        int leastKey = treeMap.firstKey();
 
-        System.out.println(targetMap);
+        int greatestKey = treeMap.lastKey();
+
+        System.out.println("Greateast key is "  + greatestKey + " " + "least key is " + leastKey);
     }
 
 }
