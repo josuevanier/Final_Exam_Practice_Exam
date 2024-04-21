@@ -15,7 +15,7 @@ public class SetExamples {
         integers.add(78);
 
         System.out.println("Enter a number ");
-        int givenNumber = sc.nextInt();
+         int givenNumber = sc.nextInt();
         HashSet<Integer> integers1s = new HashSet<>();
         for(Integer integer : integers){
             if(integer > givenNumber){
