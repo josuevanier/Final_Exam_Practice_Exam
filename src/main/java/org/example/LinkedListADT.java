@@ -149,17 +149,40 @@ public class LinkedListADT<Type>{
 
             }
         }
+
+    }
+    public void reverseLinkedList() {
+        if (isLinkEmpty() || size == 1) {
+            return; // No need to reverse if the list is empty or has only one element
+        }
+
+        Node<Type> current = head;
+        Node<Type> prev = null;
+        Node<Type> next = null;
+
+        while (current != null) {
+            // Store next node
+            next = current.getNext();
+            // Reverse current node's pointer
+            current.setNext(prev);
+            // Move pointers one position ahead
+            prev = current;
+            current = next;
+        }
+
+        // Change head to point to the last node (prev)
+        head = prev;
     }
 
     public static void main(String[] args) {
         LinkedListADT<Integer> integers = new LinkedListADT<>();
-       // integers.insetFirstElement(1);
         integers.insetFirstElement(2);
         integers.insetAtLast(5);
-        integers.insetAtLast(6);
+        integers.insetAtLast(5);
+
         integers.viewElement();
-        integers.insertMiddleOrPosition(2,5);
         System.out.println();
-        integers.viewElement();
+       integers.deleteNodeAtLast();
+       integers.viewElement();
     }
 }

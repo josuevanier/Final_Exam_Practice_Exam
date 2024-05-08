@@ -18,11 +18,15 @@ public class QueueADT<Type>{
             back++;
         }
     }
-    public void dequeue(){
-        if(!isEmpty()){
+    public Type dequeue() {
+        if (!isEmpty()) {
             Type elementRetrieve = elements[front];
-            front++;
-            System.out.println(elementRetrieve + "is retrieve ");
+            front = (front + 1) % size;
+            System.out.println(elementRetrieve + " is retrieved ");
+            return elementRetrieve;
+        } else {
+            System.out.println("Queue is empty");
+            return null;
         }
     }
     public boolean isEmpty(){
@@ -36,6 +40,19 @@ public class QueueADT<Type>{
         System.out.print("Elements ");
         for(int i = front; i < back; i++){
             System.out.print(elements[i] + " ");
+        }
+    }
+    public void shiftQueue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty, nothing to shift");
+            return;
+        }
+
+        int count = (back - front + size) % size;
+        int mid = count / 2;
+        for (int i = 0; i < mid; i++) {
+            Type temp = dequeue();
+            enqueue(temp);
         }
     }
 

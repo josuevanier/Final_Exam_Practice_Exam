@@ -69,6 +69,12 @@ public class Cinema {
 
         double totalRevenue = cinemas.stream().mapToDouble(Cinema::getRevenue).sum();
 
+
         System.out.println(totalRevenue);
+
+        double totalRatin = cinemas.stream().mapToDouble(Cinema::getRating).sum();
+
+        System.out.println(totalRatin);
+
     }
 }

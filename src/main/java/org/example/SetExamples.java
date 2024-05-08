@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class SetExamples {
     public static void main(String[] args) {
@@ -27,3 +24,5 @@ public class SetExamples {
         }else System.out.println("No numbers are greater than the giving number");
     }
 }
+
+    }
