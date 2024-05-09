@@ -76,5 +76,21 @@ public class Cinema {
 
         System.out.println(totalRatin);
 
+        // Sort cinemas by revenue
+        Comparator<Cinema> revenueComparator = Comparator.comparing(Cinema::getRevenue);
+        cinemas.stream().sorted(revenueComparator).forEach(System.out::println);
+
+        // Sort cinemas by director
+        Comparator<Cinema> directorComparator = Comparator.comparing(Cinema::getDirector);
+        cinemas.stream().sorted(directorComparator).forEach(System.out::println);
+        // Sort cinemas by revenue in descending order
+        Comparator<Cinema> revenueComparators = Comparator.comparing(Cinema::getRevenue).reversed();
+        cinemas.stream().sorted(revenueComparators).forEach(System.out::println);
+
+        // Sort cinemas by director in descending order
+        Comparator<Cinema> directorComparatos = Comparator.comparing(Cinema::getDirector).reversed();
+        cinemas.stream().sorted(directorComparatos).forEach(System.out::println);
+
+
     }
 }
